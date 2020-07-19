@@ -3,7 +3,6 @@ import { editCard, deleteCard } from '../actions/index'
 import { connect } from 'react-redux'
 
 const Card = ({ text, id, listId, dispatch }) => {
-
   const [cardText, setCardText] = useState(text)
   const [isEdit, setIsEdit] = useState(false)
   const [isDelete, setIsDelete] = useState(false)

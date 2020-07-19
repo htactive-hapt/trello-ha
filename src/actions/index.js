@@ -33,6 +33,7 @@ export const deleteList = listId => {
 
 export const addCard = (listId, cardName) => {
     console.log(cardName, 'cardName')
+
     return {
         type: actionTypes.ADD_CARD,
         payload: {
@@ -44,6 +45,7 @@ export const addCard = (listId, cardName) => {
 
 export const editCard = (id, listId, newCardName) => {
     console.log(id, listId, newCardName, 'id, listId, newCardName')
+
     return {
         type: actionTypes.EDIT_CARD,
         payload: {

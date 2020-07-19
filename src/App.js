@@ -7,6 +7,7 @@ import './App.css'
 class App extends React.Component {
   render() {
     const { lists } = this.props
+
     return (
       <div className='App'>
         <h2 className="text-center">Trello App</h2>
@@ -14,7 +15,7 @@ class App extends React.Component {
           {lists && lists.map((list, i) => (
             <Lists key={list.id} listId={list.id} title={list.title} cards={list.cards} />
           ))}
-          <AddButton list />
+          <AddButton list responsive={true} />
         </div>
       </div>
     )
@@ -25,4 +26,4 @@ const mapStateToProps = (state) => {
   return { lists: state.lists }
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, null)(App)

@@ -61,4 +61,4 @@ const List = ({ title, cards, listId, dispatch }) => {
   )
 }
 
-export default connect()(List)
+export default connect(null)(List)
