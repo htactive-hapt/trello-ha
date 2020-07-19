@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Lists from './components/Lists'
+import { connect } from 'react-redux'
+import AddButton from './components/AddButton'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    const { lists } = this.props
+    return (
+      <div className='App'>
+        <h2 className="text-center">Trello App</h2>
+        <div className='boards'>
+          {lists && lists.map((list, i) => (
+            <Lists key={list.id} listId={list.id} title={list.title} cards={list.cards} />
+          ))}
+          <AddButton list />
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return { lists: state.lists }
+}
+
+export default connect(mapStateToProps)(App)
