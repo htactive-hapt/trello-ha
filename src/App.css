@@ -47,7 +47,7 @@ body {
 }
 
 .list {
-    width: 230px;
+    width: 240px;
 }
 
 .add-button {
@@ -70,7 +70,7 @@ body {
 .textarea-input {
     resize: none;
     left: 0;
-    width: 230px;
+    width: 240px;
     padding: 0;
     height: 50px;
     margin-bottom: 6px;

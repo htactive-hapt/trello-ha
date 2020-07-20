@@ -53,9 +53,9 @@ const List = ({ title, cards, listId, dispatch }) => {
         )}
       <div className='list'>
         {cards.map((card, i) => (
-          <Cards key={i} id={card.id} listId={listId} text={card.text} />
+          <Cards key={i} id={card.id} listId={listId} text={card.cardName} />
         ))}
-        <AddButton title={title} listId={listId} />
+        <AddButton children={title} title={title} listId={listId} />
       </div>
     </div>
   )
