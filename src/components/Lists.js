@@ -5,12 +5,14 @@ import { useState } from 'react'
 import { editList, deleteList } from '../actions/index'
 import { connect } from 'react-redux'
 
-const List = ({ title, cards, listId, dispatch }) => {
+const List = ({ title, cards, listId, createdAt, dispatch }) => {
+
+  console.log(createdAt);
   const [isEditting, setIsEditting] = useState(false)
   const [listTitle, setListTitle] = useState(title)
   const [isDeleting, setIsDeleting] = useState(false)
 
-  console.log(title, cards, listId, dispatch, 'title, cards, listId, dispatch')
+  console.log(title, cards, listId, dispatch, createdAt, 'title, cards, listId, dispatch, createdAt')
 
   const handleUpdateList = () => {
     setIsEditting(false)
@@ -36,6 +38,7 @@ const List = ({ title, cards, listId, dispatch }) => {
             value={listTitle}
             autoFocus
           />
+          <div>{createdAt}</div>
           <div>
             <button className='add-card-title' onClick={handleUpdateList}>Save</button>
             {isDeleting ? (
@@ -55,7 +58,7 @@ const List = ({ title, cards, listId, dispatch }) => {
         {cards.map((card, i) => (
           <Cards key={i} id={card.id} listId={listId} text={card.cardName} />
         ))}
-        <AddButton children={title} title={title} listId={listId} />
+        <AddButton res title={title} listId={listId} /> {/*  */}
       </div>
     </div>
   )

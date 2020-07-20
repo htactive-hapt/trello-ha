@@ -2,10 +2,13 @@ import * as actionTypes from './types'
 
 // List Action
 
-export const addList = title => {
+export const addList = (title, createdAt) => {
     return {
         type: actionTypes.ADD_LIST,
-        payload: title
+        payload: {
+            title,
+            createdAt
+        }
     }
 }
 
@@ -14,7 +17,7 @@ export const editList = (listId, newListTitle) => {
         type: actionTypes.EDIT_LIST,
         payload: {
             listId,
-            newListTitle
+            newListTitle,
         }
     }
 }

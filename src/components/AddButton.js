@@ -8,9 +8,10 @@ const AddButton = ({ list, dispatch, listId }) => {
     const [text, setText] = useState('')
 
     const handleAddList = () => {
+        let timeNow = new Date().toLocaleString()
         if (text) {
-            dispatch(addList(text))
-            console.log(text, 'text list')
+            dispatch(addList(text, timeNow))
+            console.log(text, timeNow, 'timeNow, text')
             setText('')
         }
         return

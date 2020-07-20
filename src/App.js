@@ -13,7 +13,7 @@ class App extends React.Component {
         <h2 className="text-center">Trello App</h2>
         <div className='boards'>
           {lists && lists.map((list, i) => (
-            <Lists key={list.id} listId={list.id} title={list.title} cards={list.cards} />
+            <Lists key={list.id} listId={list.id} title={list.title} createdAt={list.createdAt} cards={list.cards} />
           ))}
           <AddButton list responsive={true} />
         </div>
